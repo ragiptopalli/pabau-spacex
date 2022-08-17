@@ -21,7 +21,7 @@ const LaunchItem = ({
 
   return (
     <Grid item xs={4} sm={4} md={4}>
-      <Card onClick={handleNavigate}>
+      <Card onClick={handleNavigate} sx={{ cursor: 'pointer' }}>
         <CardMedia
           component='img'
           height='240'

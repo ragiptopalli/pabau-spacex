@@ -25,8 +25,6 @@ const Launches = () => {
     return Math.floor(Math.random() * (max - min)) + min;
   };
 
-  // const estDate = filteredLaunches[0].launch_date_local;
-
   const formatedDate = (estDate) => {
     const getDate = new Date(estDate);
     return getDate.toLocaleString('shq-AL', {

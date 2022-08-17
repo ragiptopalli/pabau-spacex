@@ -1,11 +1,4 @@
-import {
-  Box,
-  Container,
-  CssBaseline,
-  Divider,
-  Grid,
-  Typography,
-} from '@mui/material';
+import { Box, Divider, Grid, Typography } from '@mui/material';
 
 import { GET_ROCKET_DETAILS } from '../../graphql/queries/rocket-details.query';
 import { useQuery } from '@apollo/client';

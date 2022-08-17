@@ -14,7 +14,7 @@ import './navigation.styles.css';
 import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
-const pages = ['Past Missions', 'About', 'Contact'];
+const pages = ['Past Missions', 'About SpaceX'];
 
 const Navigation = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -29,7 +29,7 @@ const Navigation = () => {
 
   return (
     <>
-      <AppBar sx={{ bgcolor: '#000' }} position='static'>
+      <AppBar sx={{ bgcolor: '#000' }} position='sticky'>
         <Container maxWidth='xl'>
           <Toolbar disableGutters>
             <Typography

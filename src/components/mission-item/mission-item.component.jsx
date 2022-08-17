@@ -6,17 +6,18 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Box, Container, Grid } from '@mui/material';
 
-import { GET_PAST_MISSIONS } from '../../graphql/queries/past-missions';
+import { GET_PAST_LAUNCHES } from '../../graphql/queries/past-launches.query.js';
 import { useQuery } from '@apollo/client';
 
-import noImage from '../../assets/no-image.jpg';
-
 import './mission-item.styles.css';
+import Loading from '../loading/loading.component.jsx';
 
 const MissionItem = () => {
-  const { error, data, loading } = useQuery(GET_PAST_MISSIONS);
+  const { loading, error, data } = useQuery(GET_PAST_LAUNCHES);
 
-  console.log({ error, loading, data }, 'heyyyy');
+  if (loading) {
+    return <Loading />;
+  }
 
   if (error) {
     alert('Something went wrong!' + error);
@@ -25,6 +26,11 @@ const MissionItem = () => {
   function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
   }
+
+  const filteredLaunches = data?.launchesPast.filter(
+    (launch) =>
+      launch.links.article_link && launch.links.flickr_images.length > 0
+  );
 
   return (
     <Container maxWidth='xl'>
@@ -37,19 +43,16 @@ const MissionItem = () => {
           {loading ? (
             <div>Spinner...</div>
           ) : (
-            data.launchesPast.map((launch, id) => (
+            filteredLaunches.map((launch, id) => (
               <Grid item xs={4} sm={4} md={4} key={id}>
                 <Card>
                   <CardMedia
                     component='img'
                     height='240'
                     image={
-                      launch.links?.flickr_images &&
-                      launch.links.flickr_images.length > 0
-                        ? launch.links.flickr_images[
-                            getRandomInt(0, launch.links?.flickr_images.length)
-                          ]
-                        : noImage
+                      launch.links.flickr_images[
+                        getRandomInt(0, launch.links?.flickr_images.length)
+                      ]
                     }
                     alt={launch.mission_name}
                   />

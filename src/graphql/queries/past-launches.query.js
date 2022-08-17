@@ -3,9 +3,9 @@ import { gql } from '@apollo/client';
 export const NUM_PAGES = 3;
 export const ITEMS_LIMIT = 12;
 
-export const GET_PAST_MISSIONS = gql`
+export const GET_PAST_LAUNCHES = gql`
   query {
-    launchesPast(limit: 12) {
+    launchesPast(limit: 30) {
       mission_name
       id
       launch_date_local

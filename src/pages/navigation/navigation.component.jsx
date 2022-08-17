@@ -14,8 +14,6 @@ import './navigation.styles.css';
 import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
-const pages = ['Past Launches', 'About SpaceX'];
-
 const Navigation = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
 
@@ -75,17 +73,23 @@ const Navigation = () => {
                   display: { xs: 'block', md: 'none' },
                 }}
               >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography
-                      component={Link}
-                      to={`/${page.replaceAll(' ', '-').toLowerCase()}`}
-                      textAlign='center'
-                    >
-                      {page}
-                    </Typography>
-                  </MenuItem>
-                ))}
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography
+                    component={Link}
+                    to='past-launches'
+                    textAlign='center'
+                  >
+                    Past Launches
+                  </Typography>
+                  <Typography
+                    component='a'
+                    href='https://github.com/ragiptopalli/pabau-spacex'
+                    target='_blank'
+                    textAlign='center'
+                  >
+                    GitHub Repo
+                  </Typography>
+                </MenuItem>
               </Menu>
             </Box>
 
@@ -109,22 +113,33 @@ const Navigation = () => {
                 justifyContent: 'right',
               }}
             >
-              {pages.map((page) => (
-                <Button
-                  component={Link}
-                  to={`/${page.replaceAll(' ', '-').toLowerCase()}`}
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    my: 2,
-                    color: '#fff',
-                    display: 'block',
-                    fontSize: '16px',
-                  }}
-                >
-                  {page}
-                </Button>
-              ))}
+              <Button
+                component={Link}
+                to='past-launches'
+                onClick={handleCloseNavMenu}
+                sx={{
+                  my: 2,
+                  color: '#fff',
+                  display: 'block',
+                  fontSize: '16px',
+                }}
+              >
+                Past Launches
+              </Button>
+              <Button
+                component='a'
+                href='https://github.com/ragiptopalli/pabau-spacex'
+                target='_blank'
+                onClick={handleCloseNavMenu}
+                sx={{
+                  my: 2,
+                  color: '#fff',
+                  display: 'block',
+                  fontSize: '16px',
+                }}
+              >
+                GitHub Repo
+              </Button>
             </Box>
           </Toolbar>
         </Container>

@@ -4,6 +4,7 @@ export const GET_ROCKET_DETAILS = gql`
     launchesPast(limit: 30) {
       mission_name
       id
+      details
       rocket {
         rocket_name
         rocket_type
@@ -18,7 +19,6 @@ export const GET_ROCKET_DETAILS = gql`
           mass {
             kg
           }
-          description
         }
       }
     }

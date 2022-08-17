@@ -25,6 +25,17 @@ const Launches = () => {
     return Math.floor(Math.random() * (max - min)) + min;
   };
 
+  // const estDate = filteredLaunches[0].launch_date_local;
+
+  const formatedDate = (estDate) => {
+    const getDate = new Date(estDate);
+    return getDate.toLocaleString('shq-AL', {
+      timeZone: 'Europe/Tirane',
+      dateStyle: 'short',
+      timeStyle: 'short',
+    });
+  };
+
   return (
     <>
       <Container maxWidth='xl'>
@@ -49,6 +60,7 @@ const Launches = () => {
                   missionName={launch.mission_name}
                   launchSiteName={launch.launch_site.site_name}
                   articleLink={launch.links.article_link}
+                  launchDate={formatedDate(launch.launch_date_local)}
                 />
               ))
             )}

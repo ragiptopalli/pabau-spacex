@@ -13,6 +13,7 @@ const LaunchItem = ({
   missionName,
   launchSiteName,
   articleLink,
+  launchDate,
 }) => {
   const navigate = useNavigate();
 
@@ -33,6 +34,9 @@ const LaunchItem = ({
           </Typography>
           <Typography variant='h6' color='text.secondary'>
             Site Name: {launchSiteName}
+          </Typography>
+          <Typography variant='h6' color='text.secondary'>
+            Launched: {launchDate}
           </Typography>
         </CardContent>
         <CardActions>

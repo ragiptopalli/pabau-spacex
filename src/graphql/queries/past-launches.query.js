@@ -1,25 +1,18 @@
 import { gql } from '@apollo/client';
 
-export const NUM_PAGES = 3;
-export const ITEMS_LIMIT = 12;
-
 export const GET_PAST_LAUNCHES = gql`
   query {
     launchesPast(limit: 30) {
-      mission_name
       id
+      mission_name
       launch_date_local
       launch_site {
-        site_name_long
+        site_name
       }
       links {
         article_link
         flickr_images
       }
-      rocket {
-        rocket_name
-      }
-      launch_year
     }
   }
 `;

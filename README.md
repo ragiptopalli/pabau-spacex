@@ -1,25 +1,46 @@
-# Getting Started with Create React App
+# SpaceX Past Launches 
+This project displays SpaceX's past launch missions based on their public [GraphQL API](https://github.com/SpaceXLand/api). 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- *PAST LAUNCHES* displays 30 Past Launche Items, where each card has a random image from the mission's Flickr, the mission's name, site name the date it launched based on the `Europe/Tirane` timezone, and an article of the mission. 
+Also when you click on any of the cards it takes to a new page with more detailed information about the mission and the rocket used.
 
-## Available Scripts
+## Requirements
+- `npm@8.15.0`
+- `node@18.7.0`
+- `react@18.2.0`
+- `react-dom@18.2.0`
+- `react-router-dom@6.3.0`
+- `@apollo/client@3.6.9`
+- `graphql@16.5.0`
+- `@mui/icons-material@5.8.4`
+- `@mui/material@5.10.0`
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+First install the dependencies:
+
+```bash
+npm install
+```
+
+Then, In the project directory, you can run:
+
+```bash
+npm start
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You can start editing the page by modifying `src/App.js`. The page auto-updates as you edit the file.
 
-### `npm test`
+## Production Mode
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+If you want to run the production mode, first you have to build the project:
 
-### `npm run build`
+```bash
+npm run build
+```
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -27,44 +48,8 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Then you can start the production mode:
+```bash
+npm start
+```
+After you finish these steps, the app will start at [http://localhost:3000](http://localhost:3000).
